@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skandinavien-Reise 2025 · Familie & Freunde</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #2d4a3e;
+    --pine: #3a6349;
+    --fjord: #1e3a5f;
+    --sky: #4a7fa5;
+    --stone: #6b7c6e;
+    --mist: #f0f4f1;
+    --cream: #faf9f6;
+    --bark: #8b6f47;
+    --gold: #c9963a;
+    --text: #1a2a1d;
+    --text-light: #4a5c4d;
+    --border: #d4ddd6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
+
+  a { color: var(--pine); text-decoration: none; border-bottom: 1px solid #b5cfba; transition: color 0.15s, border-color 0.15s; }
+  a:hover { color: var(--forest); border-color: var(--forest); }
+
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #0d2117 0%, #1e3a5f 50%, #2d4a3e 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 80px 40px; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='800' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='400' cy='550' rx='600' ry='300' fill='%23162c1c' opacity='0.4'/%3E%3Cellipse cx='200' cy='480' rx='280' ry='160' fill='%23112a38' opacity='0.5'/%3E%3Cellipse cx='650' cy='500' rx='220' ry='130' fill='%23162c1c' opacity='0.3'/%3E%3C/svg%3E");
+    background-size: cover; background-position: bottom; pointer-events: none;
+  }
+  .hero-stars {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px), radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1px), radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px);
+    background-size: 120px 120px, 80px 80px, 60px 60px;
+    background-position: 0 0, 40px 40px, 20px 70px; pointer-events: none;
+  }
+  .hero-eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 20px; position: relative; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 7vw, 80px); font-weight: 700; color: #fff; line-height: 1.1; position: relative; }
+  .hero h1 span { color: #8fc4a8; }
+  .hero-sub { font-size: 16px; color: rgba(255,255,255,0.65); margin-top: 24px; max-width: 480px; position: relative; }
+  .hero-dates { display: flex; gap: 40px; margin-top: 60px; position: relative; }
+  .hero-date { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 18px 28px; text-align: center; }
+  .hero-date-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+  .hero-date-val { font-size: 20px; font-weight: 600; color: #fff; margin-top: 4px; }
+  .hero-route { display: flex; align-items: center; gap: 12px; margin-top: 48px; position: relative; flex-wrap: wrap; justify-content: center; }
+  .hero-stop { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); padding: 6px 14px; border-radius: 20px; }
+  .hero-arrow { color: rgba(255,255,255,0.3); font-size: 14px; }
+
+  .nav-bar { position: sticky; top: 0; z-index: 100; background: rgba(250,249,246,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 12px 40px; display: flex; gap: 8px; overflow-x: auto; }
+  .nav-bar a { font-size: 13px; font-weight: 500; color: var(--text-light); text-decoration: none; border-bottom: none; padding: 6px 16px; border-radius: 20px; white-space: nowrap; transition: all 0.2s; }
+  .nav-bar a:hover { background: var(--mist); color: var(--forest); border-bottom: none; }
+
+  .section { max-width: 900px; margin: 0 auto; padding: 80px 40px; }
+
+  .dest-header { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+  .dest-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--pine); margin-bottom: 10px; }
+  .dest-h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 700; color: var(--text); line-height: 1.15; }
+  .dest-tagline { font-size: 15px; color: var(--text-light); margin-top: 10px; max-width: 420px; }
+  .dest-badge { background: var(--forest); color: rgba(255,255,255,0.9); padding: 10px 20px; border-radius: 10px; text-align: center; white-space: nowrap; }
+  .dest-badge-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.7; }
+  .dest-badge-val { font-size: 18px; font-weight: 600; margin-top: 2px; }
+
+  .scene { width: 100%; border-radius: 16px; margin-bottom: 40px; overflow: hidden; display: block; }
+
+  .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin: 32px 0; }
+  .info-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; }
+  .info-card-icon { font-size: 22px; margin-bottom: 8px; }
+  .info-card-label { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--stone); margin-bottom: 4px; }
+  .info-card-text { font-size: 14px; color: var(--text); line-height: 1.5; }
+
+  .excursions-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; margin: 48px 0 24px; color: var(--text); display: flex; align-items: center; gap: 12px; }
+  .excursions-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .excursion-list { display: flex; flex-direction: column; gap: 16px; }
+  .excursion { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: start; }
+  .excursion-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .excursion-icon.green { background: #e8f4ec; }
+  .excursion-icon.blue { background: #e6eef8; }
+  .excursion-icon.amber { background: #fef3e2; }
+  .excursion-icon.red { background: #fcecea; }
+  .excursion-icon.purple { background: #f0edf9; }
+  .excursion-name { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+  .excursion-desc { font-size: 14px; color: var(--text-light); line-height: 1.55; }
+  .excursion-tip { display: inline-block; margin-top: 8px; font-size: 12px; font-weight: 500; color: var(--pine); background: #e8f4ec; padding: 3px 10px; border-radius: 20px; }
+
+  .link-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .ext-link { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 500; color: var(--fjord); background: #eef3f9; border: 1px solid #c5d5e8; border-bottom: 1px solid #c5d5e8; border-radius: 20px; padding: 4px 12px; text-decoration: none; transition: background 0.15s; }
+  .ext-link:hover { background: #dde8f4; color: var(--fjord); border-color: #a0c0dc; border-bottom-color: #a0c0dc; }
+  .ext-link::after { content: '↗'; font-size: 11px; opacity: 0.7; }
+
+  .day-plan { margin: 32px 0; }
+  .day-block { display: grid; grid-template-columns: 80px 1fr; gap: 0 20px; margin-bottom: 0; }
+  .day-time { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--pine); padding-top: 3px; text-align: right; position: relative; }
+  .day-time::after { content: ''; position: absolute; right: -14px; top: 8px; width: 8px; height: 8px; border-radius: 50%; background: var(--pine); }
+  .day-content { border-left: 2px solid var(--border); padding: 0 0 28px 24px; margin-left: -7px; }
+  .day-block:last-child .day-content { border-color: transparent; }
+  .day-content-title { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+  .day-content-text { font-size: 14px; color: var(--text-light); line-height: 1.6; }
+
+  .dest-divider { border: none; border-top: 2px solid var(--border); margin: 0; }
+
+  .tips-box { background: var(--mist); border: 1px solid #c5d5c8; border-left: 4px solid var(--pine); border-radius: 10px; padding: 18px 22px; margin: 24px 0; }
+  .tips-box-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--pine); margin-bottom: 8px; }
+  .tips-box ul { list-style: none; padding: 0; }
+  .tips-box ul li { font-size: 14px; color: var(--text-light); padding: 3px 0 3px 18px; position: relative; line-height: 1.5; }
+  .tips-box ul li::before { content: '↗'; position: absolute; left: 0; color: var(--pine); font-size: 12px; }
+
+  .footer { background: var(--forest); color: rgba(255,255,255,0.6); text-align: center; padding: 40px; font-size: 13px; }
+  .footer strong { color: rgba(255,255,255,0.9); }
+
+  @media (max-width: 600px) {
+    .section { padding: 60px 20px; }
+    .dest-header { grid-template-columns: 1fr; }
+    .hero-dates { flex-direction: column; gap: 12px; }
+    .nav-bar { padding: 12px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-stars"></div>
+  <div class="hero-eyebrow">04. Juli – 22. Juli 2025</div>
+  <h1>Norwegen &<br><span>Schweden</span></h1>
+  <p class="hero-sub">Zwei Familien, fünf Stationen, drei Wochen – Fjorde, Wälder, Seen und Städte</p>
+  <div class="hero-dates">
+    <div class="hero-date"><div class="hero-date-label">Abreise</div><div class="hero-date-val">04. Juli</div></div>
+    <div class="hero-date"><div class="hero-date-label">Familien</div><div class="hero-date-val">2 + 2</div></div>
+    <div class="hero-date"><div class="hero-date-label">Rückreise</div><div class="hero-date-val">22. Juli</div></div>
+  </div>
+  <div class="hero-route">
+    <div class="hero-stop">Buchholz</div><div class="hero-arrow">→</div>
+    <div class="hero-stop">Puttgarden–Rødby</div><div class="hero-arrow">→</div>
+    <div class="hero-stop">Øresundbrücke</div><div class="hero-arrow">→</div>
+    <div class="hero-stop">Aurskog-Høland</div><div class="hero-arrow">→</div>
+    <div class="hero-stop">Uppsala</div><div class="hero-arrow">→</div>
+    <div class="hero-stop">Hofors</div><div class="hero-arrow">→</div>
+    <div class="hero-stop">Göteborg</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav-bar">
+  <a href="#aurskog">Aurskog-Høland</a>
+  <a href="#uppsala">Uppsala</a>
+  <a href="#hofors">Hofors</a>
+  <a href="#goeteborg">Göteborg</a>
+</nav>
+
+<!-- ============================
+     AURSKOG-HØLAND
+     ============================ -->
+<div id="aurskog">
+<div class="section">
+  <div class="dest-header">
+    <div>
+      <div class="dest-eyebrow">04. – 11. Juli · Norwegen · Mit Freunden</div>
+      <h2 class="dest-h2">Aurskog-Høland</h2>
+      <p class="dest-tagline">Waldnorwegen pur – Seen, Stille, Paddel und Angeln in einer ruhigen Kommuneregion östlich von Oslo</p>
+    </div>
+    <div class="dest-badge"><div class="dest-badge-label">Aufenthalt</div><div class="dest-badge-val">7 Nächte</div></div>
+  </div>
+
+  <svg class="scene" viewBox="0 0 860 320" xmlns="http://www.w3.org/2000/svg">
+    <rect width="860" height="320" fill="#c8dde8"/>
+    <rect width="860" height="160" fill="#aecfe0"/>
+    <rect y="145" width="860" height="175" fill="#6a9fba"/>
+    <rect y="190" width="860" height="130" fill="#5b8fa8" opacity="0.85"/>
+    <polygon points="0,160 80,80 160,140 240,70 320,130 400,60 480,120 560,55 640,115 720,65 800,110 860,80 860,160" fill="#3a6b5c"/>
+    <polygon points="0,190 40,130 80,160 120,120 160,155 200,115 240,148 280,118 320,150 360,120 400,155 440,125 480,158 520,130 560,162 600,128 640,158 680,125 720,155 760,132 800,158 840,138 860,150 860,190" fill="#2d5244"/>
+    <polygon points="0,200 860,200 860,220 0,220" fill="#4a7a5c" opacity="0.7"/>
+    <line x1="100" y1="230" x2="200" y2="232" stroke="#c8dde8" stroke-width="1.5" opacity="0.4"/>
+    <line x1="300" y1="250" x2="420" y2="248" stroke="#c8dde8" stroke-width="1" opacity="0.3"/>
+    <line x1="500" y1="240" x2="650" y2="243" stroke="#c8dde8" stroke-width="1.5" opacity="0.35"/>
+    <rect x="660" y="162" width="50" height="32" fill="#8b4513"/>
+    <polygon points="655,165 715,165 685,142" fill="#6b3010"/>
+    <rect x="671" y="176" width="10" height="18" fill="#5b8fa8"/>
+    <rect x="690" y="178" width="8" height="8" fill="#5b8fa8"/>
+    <rect x="100" y="200" width="5" height="35" fill="#8b6f47"/>
+    <rect x="90" y="205" width="25" height="3" fill="#8b6f47"/>
+    <rect x="90" y="215" width="25" height="3" fill="#8b6f47"/>
+    <ellipse cx="180" cy="215" rx="35" ry="7" fill="#c9963a"/>
+    <line x1="180" y1="208" x2="182" y2="200" stroke="#8b6f47" stroke-width="2"/>
+    <g fill="#1e3d2e">
+      <polygon points="30,190 45,140 60,190"/><polygon points="25,195 45,155 65,195"/>
+      <polygon points="760,185 775,138 790,185"/><polygon points="755,192 775,150 795,192"/>
+      <polygon points="810,188 822,148 834,188"/>
+    </g>
+    <circle cx="720" cy="55" r="22" fill="#f0d070" opacity="0.85"/>
+    <ellipse cx="150" cy="45" rx="50" ry="18" fill="white" opacity="0.5"/>
+    <ellipse cx="180" cy="40" rx="35" ry="14" fill="white" opacity="0.45"/>
+    <ellipse cx="420" cy="65" rx="40" ry="14" fill="white" opacity="0.4"/>
+  </svg>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="info-card-icon">🏡</div>
+      <div class="info-card-label">Unterkunft</div>
+      <div class="info-card-text">Ferienhaus via Airbnb – mit Freunden (4 Erwachsene, 4 Kinder)</div>
+      <div class="link-row"><a class="ext-link" href="https://www.airbnb.de/rooms/1166042152939597516">Airbnb-Inserat</a></div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">🏊</div>
+      <div class="info-card-label">Baden</div>
+      <div class="info-card-text">See Setten & weitere Seen – Badeschuhe & Mückenschutz einpacken</div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">🎣</div>
+      <div class="info-card-label">Angeln</div>
+      <div class="info-card-text">AHFA-Karte kaufen · Hecht in Setten & Mjermen · Kinder &lt;16 oft kostenlos</div>
+      <div class="link-row">
+        <a class="ext-link" href="https://www.inatur.no">Inatur</a>
+        <a class="ext-link" href="https://www.perfish.no">Perfish</a>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">🛶</div>
+      <div class="info-card-label">Boot & Kanu</div>
+      <div class="info-card-text">Kanus, SUP & Schwimmwesten kostenlos bei der lokalen Ausrüstungszentrale · Rømskog Spa vermietet Boote</div>
+      <div class="link-row"><a class="ext-link" href="https://romskogspaogsresort.no">Rømskog Spa</a></div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">🗺️</div>
+      <div class="info-card-label">Wandern & Natur</div>
+      <div class="info-card-text">Ausgedehnte Waldgebiete und ruhige Seen – Komoot und Naturkartan für Routen</div>
+      <div class="link-row">
+        <a class="ext-link" href="https://www.komoot.com/guide/1137/hiking-in-aurskog-holand">Komoot</a>
+        <a class="ext-link" href="https://www.naturkartan.se">Naturkartan</a>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">🦟</div>
+      <div class="info-card-label">Wichtig</div>
+      <div class="info-card-text">Mücken- und Zeckenschutz · Badeschuhe · Ticks nach Waldgängen prüfen</div>
+    </div>
+  </div>
+
+  <div class="tips-box">
+    <div class="tips-box-label">Angeln – Praktische Tipps</div>
+    <ul>
+      <li>Erst klären, welcher See am Ferienhaus liegt, dann passende „fiskekort"-Zone auf <a href="https://www.perfish.no">Perfish</a> oder <a href="https://www.inatur.no">Inatur</a> kaufen</li>
+      <li>Für Hecht besonders empfehlenswert: Setten, Mjermen, Hølandselva, Bjørkelangsjøen</li>
+      <li>Kinder unter 16 angeln auf Binnenfisch in vielen Gewässern kostenlos – nicht auf Lachs/Meerforelle</li>
+      <li>Motorboote auf Seen können genehmigungspflichtig sein – vor Ort beim Gastgeber fragen</li>
+    </ul>
+  </div>
+
+  <div class="excursions-title">Ausflugsziele</div>
+  <div class="excursion-list">
+
+    <div class="excursion">
+      <div class="excursion-icon blue">🛶</div>
+      <div>
+        <div class="excursion-name">Haldenkanalen / Ørje-Schleusen</div>
+        <div class="excursion-desc">Der etwa 80 km lange Kanal verbindet Seen, Schleusen, Natur und Kulturgeschichte. Am Kanalmuseum in Ørje kann man Kanus leihen. Plan: Vormittags Kanalmuseum und Schleusen, dann 2–3 Stunden Paddeln und Picknick – auch für die 9–14-Jährigen ideal.</div>
+        <div class="link-row">
+          <a class="ext-link" href="https://www.haldenkanalen.no">Haldenkanalen</a>
+          <a class="ext-link" href="https://www.visithalden.com/no/aktiviteter/kanalmuseet-enje/">Kanalmuseum Ørje</a>
+        </div>
+        <span class="excursion-tip">Bester Familienausflug</span>
+      </div>
+    </div>
+
+    <div class="excursion">
+      <div class="excursion-icon green">🌊</div>
+      <div>
+        <div class="excursion-name">Rømskog / See Vortungen</div>
+        <div class="excursion-desc">Ruhiger Naturtag: Baden, Wald, Kanu/SUP/Boot. Das Rømskog Spa & Resort am See Vortungen vermietet Kanus, Boote und Mountainbikes. Für die Erwachsenen optional ein Day-Spa.</div>
+        <div class="link-row"><a class="ext-link" href="https://romskogspaogsresort.no">Rømskog Spa & Resort</a></div>
+        <span class="excursion-tip">Entspannter Naturtag</span>
+      </div>
+    </div>
+
+    <div class="excursion">
+      <div class="excursion-icon amber">🚂</div>
+      <div>
+        <div class="excursion-name">Skulerud-Draisine</div>
+        <div class="excursion-desc">Kurzweiliger Spaß am historischen Bahnhof – am besten mit einem weiteren Ausflug ins Umland kombinieren, z.B. Haldenkanal oder See-Picknick.</div>
+        <div class="link-row"><a class="ext-link" href="https://www.visitnorway.com/listings/skulerud-railway-station/228367/">VisitNorway</a></div>
+        <span class="excursion-tip">Kombinierbar</span>
+      </div>
+    </div>
+
+    <div class="excursion">
+      <div class="excursion-icon purple">🏙️</div>
+      <div>
+        <div class="excursion-name">Oslo (Tagesausflug)</div>
+        <div class="excursion-desc">Von Aurskog-Høland gut erreichbar. Nicht überfrachten: Vormittags MUNCH-Museum, Opernhaus-Dach und Barcode-Viertel, dann Akershus und Aker Brygge. Nachmittags Vigelandpark oder Bygdøy (Fram-/Kon-Tiki-/Folkemuseum). Abends Grünerløkka für Streetfood, Mathallen und Craftbeer. Bei gutem Wetter: Fähre ab Aker Brygge zu den Oslofjord-Inseln.</div>
+        <div class="link-row">
+          <a class="ext-link" href="https://www.munchmuseet.no">MUNCH-Museum</a>
+          <a class="ext-link" href="https://www.frammuseum.no">Frammuseet</a>
+          <a class="ext-link" href="https://www.visitoslo.com/de/">VisitOslo</a>
+          <a class="ext-link" href="https://www.vigeland.museum.no">Vigelandpark</a>
+        </div>
+        <span class="excursion-tip">Parken teuer – ggf. Zug ab Lillestrøm</span>
+      </div>
+    </div>
+
+    <div class="excursion">
+      <div class="excursion-icon red">🏰</div>
+      <div>
+        <div class="excursion-name">Fredrikstad Gamlebyen</div>
+        <div class="excursion-desc">Sehr schöne befestigte Altstadt – ideal zum Bummeln, Eis essen und Geschichte ohne Museumsdruck. Entspannter als Oslo, perfekt für Gruppen mit Kindern. Alternative: Halden mit Fredriksten Festung und Kanalblick.</div>
+        <div class="link-row">
+          <a class="ext-link" href="https://www.visitfredrikstad.com">VisitFredrikstad</a>
+          <a class="ext-link" href="https://www.fredrikstenfestning.no">Fredriksten Festung</a>
+        </div>
+        <span class="excursion-tip">Favorit mit Gruppe</span>
+      </div>
+    </div>
+
+    <div class="excursion">
+      <div class="excursion-icon blue">☕</div>
+      <div>
+        <div class="excursion-name">Bjørkelangen</div>
+        <div class="excursion-desc">Authentisches Dorf-/Stadtleben mit Café, Supermarkt und kleinem Spaziergang – gut zum Ankommen, ggf. Touristinfo im Bjørkebadet.</div>
+        <div class="link-row"><a class="ext-link" href="https://www.visitaurskogholand.no">Visit Aurskog-Høland</a></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<hr class="dest-divider">
+
+<!-- ============================
+     UPPSALA
+     ============================ -->
+<div id="uppsala">
+<div class="section">
+  <div class="dest-header">
+    <div>
+      <div class="dest-eyebrow">11. Juli · Eine Nacht · Akademihotellet</div>
+      <h2 class="dest-h2">Uppsala</h2>
+      <p class="dest-tagline">Universitätsstadt mit Domflair, Flussarmen, Botanik und schwedischer Wissenschaftsgeschichte – Abend mit Konzert im Stadtpark</p>
+    </div>
+    <div class="dest-badge"><div class="dest-badge-label">Aufenthalt</div><div class="dest-badge-val">1 Nacht</div></div>
+  </div>
+
+  <svg class="scene" viewBox="0 0 860 280" xmlns="http://www.w3.org/2000/svg">
+    <rect width="860" height="280" fill="#d4e8f0"/>
+    <rect width="860" height="130" fill="#bdd5e8"/>
+    <ellipse cx="430" cy="130" rx="300" ry="80" fill="#f0c87e" opacity="0.3"/>
+    <rect y="195" width="860" height="50" fill="#7aafc4" opacity="0.7"/>
+    <rect y="185" width="860" height="20" fill="#5a8c5a" opacity="0.9"/>
+    <rect x="340" y="60" width="60" height="130" fill="#c5b99a"/>
+    <rect x="320" y="90" width="100" height="100" fill="#d4c9ab"/>
+    <polygon points="340,60 360,10 380,60" fill="#b0a488"/>
+    <polygon points="360,60 380,10 400,60" fill="#b0a488"/>
+    <rect x="350" y="110" width="12" height="20" rx="6" fill="#6a9fba" opacity="0.6"/>
+    <rect x="370" y="110" width="12" height="20" rx="6" fill="#6a9fba" opacity="0.6"/>
+    <rect x="390" y="110" width="12" height="20" rx="6" fill="#6a9fba" opacity="0.6"/>
+    <rect x="550" y="100" width="100" height="90" fill="#c8b48e"/>
+    <rect x="545" y="95" width="112" height="20" fill="#b8a47e"/>
+    <rect x="548" y="70" width="22" height="45" fill="#c8b48e"/>
+    <rect x="630" y="70" width="22" height="45" fill="#c8b48e"/>
+    <polygon points="548,70 559,50 570,70" fill="#a89060"/>
+    <polygon points="630,70 641,50 652,70" fill="#a89060"/>
+    <circle cx="200" cy="165" r="25" fill="#3a7a4e"/>
+    <circle cx="235" cy="170" r="20" fill="#2d6040"/>
+    <circle cx="165" cy="172" r="18" fill="#3a7a4e"/>
+    <circle cx="250" cy="165" r="15" fill="#4a8a5e"/>
+    <circle cx="430" cy="188" r="5" fill="#6b3a2a"/>
+    <rect x="427" y="193" width="6" height="10" fill="#4a7fa5"/>
+    <circle cx="460" cy="186" r="5" fill="#8b5e3c"/>
+    <rect x="457" y="191" width="6" height="10" fill="#c9963a"/>
+    <ellipse cx="500" cy="193" rx="20" ry="8" fill="#e0523a" opacity="0.8"/>
+    <ellipse cx="100" cy="40" rx="55" ry="18" fill="white" opacity="0.6"/>
+    <ellipse cx="700" cy="55" rx="45" ry="16" fill="white" opacity="0.5"/>
+    <text x="490" y="140" font-size="18" fill="#2d4a3e" opacity="0.5" font-family="serif">♪</text>
+    <text x="510" y="125" font-size="14" fill="#2d4a3e" opacity="0.4" font-family="serif">♫</text>
+    <text x="465" y="130" font-size="12" fill="#2d4a3e" opacity="0.35" font-family="serif">♩</text>
+  </svg>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="info-card-icon">🏨</div>
+      <div class="info-card-label">Hotel</div>
+      <div class="info-card-text">Akademihotellet – zentrale Lage, ideal zum Zu-Fuß-Erkunden</div>
+      <div class="link-row"><a class="ext-link" href="https://www.booking.com/hotel/se/akademihotellet.de.html">booking.com</a></div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">🎵</div>
+      <div class="info-card-label">Highlight</div>
+      <div class="info-card-text">Konzert im Stadtpark Stadsträdgården – Picknickdecke, Abendluft, von außen lauschen</div>
+      <div class="link-row"><a class="ext-link" href="https://www.uppsalakonsert.se">Uppsala Konsert & Kongress</a></div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">🌿</div>
+      <div class="info-card-label">Linnaeus Garden</div>
+      <div class="info-card-text">Historische Oase im Zentrum – geöffnet Mai bis September</div>
+      <div class="link-row"><a class="ext-link" href="https://www.linnaeus.se/linnaeusgarden">Linnaeus Garden</a></div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">🏛️</div>
+      <div class="info-card-label">Dom & Schloss</div>
+      <div class="info-card-text">Domkyrkan, Uppsala Slott, Carolina Rediviva – alles fußläufig</div>
+      <div class="link-row">
+        <a class="ext-link" href="https://www.uppsaladomkyrka.se">Dom</a>
+        <a class="ext-link" href="https://visituppsala.se/de/">VisitUppsala</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="excursions-title">Abendprogramm – Ankunftstag</div>
+  <div class="day-plan">
+    <div class="day-block">
+      <div class="day-time">Nachmittag</div>
+      <div class="day-content">
+        <div class="day-content-title">Ankunft & Parken</div>
+        <div class="day-content-text">Frühzeitig losfahren von Aurskog-Høland, gegen Nachmittag in Uppsala ankommen, Auto parken, dann alles zu Fuß.</div>
+      </div>
+    </div>
+    <div class="day-block">
+      <div class="day-time">Früher Abend</div>
+      <div class="day-content">
+        <div class="day-content-title">Akademihotellet → Dom → Linnaeus Garden</div>
+        <div class="day-content-text">Check-in, dann Abendrunde: Vom Hotel zum <a href="https://www.uppsaladomkyrka.se">mächtigen Domkyrkan</a>, weiter in die historische <a href="https://www.linnaeus.se/linnaeusgarden">Linnaeus Garden</a> – Botanik meets Universitätsflair.</div>
+      </div>
+    </div>
+    <div class="day-block">
+      <div class="day-time">Abend</div>
+      <div class="day-content">
+        <div class="day-content-title">Fyrisån-Ufer → Stadsträdgården-Konzert</div>
+        <div class="day-content-text">Spaziergang entlang des Flusses Fyrisån, vorbei am Uni-Viertel und Botanischen Garten zum Schloss – dann mit der Picknickdecke ans Open-Air-Konzert im <a href="https://www.uppsalakonsert.se">Stadtpark</a>. Uppsala ist studentisch genug für gute Craftbeer-Bars in Zentrumslage.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="excursions-title">Vor der Weiterfahrt</div>
+  <div class="excursion-list">
+    <div class="excursion">
+      <div class="excursion-icon green">⛰️</div>
+      <div>
+        <div class="excursion-name">Gamla Uppsala – Grabhügel & frühschwedische Geschichte</div>
+        <div class="excursion-desc">Unbedingt einbauen: Königsgräber aus der Völkerwanderungszeit, viel Freiraum, toller Kontrast zur Universitätsstadt. Anschließend Weiterfahrt nach Hofors.</div>
+        <div class="link-row"><a class="ext-link" href="https://www.raa.se/gamla-uppsala/">Gamla Uppsala Museum</a></div>
+        <span class="excursion-tip">Kurz aber eindrucksvoll</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<hr class="dest-divider">
+
+<!-- ============================
+     HOFORS
+     ============================ -->
+<div id="hofors">
+<div class="section">
+  <div class="dest-header">
+    <div>
+      <div class="dest-eyebrow">12. – 19. Juli · Schweden · Nur die Familie</div>
+      <h2 class="dest-h2">Hofors</h2>
+      <p class="dest-tagline">Gästrikland-Tiefe – Wälder, Seen, Bergbaugeschichte und schwedische Stille für eine Woche ohne Hektik</p>
+    </div>
+    <div class="dest-badge"><div class="dest-badge-label">Aufenthalt</div><div class="dest-badge-val">7 Nächte</div></div>
+  </div>
+
+  <svg class="scene" viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg">
+    <rect width="860" height="300" fill="#dce9f2"/>
+    <rect width="860" height="140" fill="#c4d8e8"/>
+    <rect y="200" width="860" height="100" fill="#5f9ab5" opacity="0.8"/>
+    <polygon points="0,200 30,150 60,180 100,140 140,170 180,130 220,165 260,135 300,168 340,138 380,165 420,138 460,165 500,140 540,168 580,135 620,162 660,140 700,168 740,140 780,165 820,145 860,165 860,200" fill="#2c5240"/>
+    <g fill="#1e3d2e">
+      <polygon points="0,210 20,165 40,210"/><polygon points="30,215 55,160 80,215"/>
+      <polygon points="75,212 100,168 125,212"/>
+      <polygon points="750,208 775,162 800,208"/><polygon points="790,212 815,165 840,212"/>
+      <polygon points="825,210 845,170 860,210"/>
+    </g>
+    <rect x="350" y="185" width="45" height="28" fill="#8b4513"/>
+    <polygon points="346,188 399,188 372,170" fill="#6b3010"/>
+    <rect x="390" y="210" width="15" height="3" fill="#6b4522"/>
+    <ellipse cx="380" cy="162" rx="5" ry="8" fill="white" opacity="0.4"/>
+    <ellipse cx="382" cy="150" rx="4" ry="7" fill="white" opacity="0.3"/>
+    <circle cx="160" cy="208" r="6" fill="#4a7a3a" opacity="0.9"/>
+    <circle cx="172" cy="210" r="5" fill="#3d6830" opacity="0.9"/>
+    <circle cx="148" cy="212" r="5" fill="#4a7a3a" opacity="0.9"/>
+    <circle cx="163" cy="206" r="2" fill="#4a3080"/>
+    <circle cx="170" cy="209" r="2" fill="#4a3080"/>
+    <circle cx="151" cy="211" r="2" fill="#3a2570"/>
+    <line x1="480" y1="200" x2="530" y2="175" stroke="#4a3020" stroke-width="2"/>
+    <line x1="530" y1="175" x2="535" y2="220" stroke="#8b9fba" stroke-width="0.8" stroke-dasharray="3,2"/>
+    <circle cx="480" cy="200" r="5" fill="#4a3020"/>
+    <rect x="690" y="198" width="30" height="8" rx="4" fill="#8b6f47"/>
+    <rect x="694" y="192" width="30" height="8" rx="4" fill="#a07850"/>
+    <rect x="688" y="186" width="30" height="8" rx="4" fill="#8b6f47"/>
+    <circle cx="650" cy="35" r="2" fill="white" opacity="0.6"/>
+    <circle cx="200" cy="25" r="2" fill="white" opacity="0.5"/>
+    <circle cx="450" cy="50" r="1.5" fill="white" opacity="0.5"/>
+    <circle cx="760" cy="50" r="28" fill="#f5d060" opacity="0.75"/>
+  </svg>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="info-card-icon">🏡</div>
+      <div class="info-card-label">Unterkunft</div>
+      <div class="info-card-text">Ferienhaus via Airbnb – nur die Familie, Wald & Seen direkt vor der Tür</div>
+      <div class="link-row"><a class="ext-link" href="https://www.airbnb.de/rooms/546772857887716073">Airbnb-Inserat</a></div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">🏊</div>
+      <div class="info-card-label">Baden</div>
+      <div class="info-card-text">Klare Waldseen – die besten Tage: See, Picknick, Waldweg, Blaubeeren, abends Sauna & Grill</div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">🎣</div>
+      <div class="info-card-label">Angeln</div>
+      <div class="info-card-text">Hofors FVOF-Angelkarte via iFiske · 40 Seen · Sälgsjön für Barsch · Hubo-Långsjön für Regenbogenforelle</div>
+      <div class="link-row"><a class="ext-link" href="https://www.ifiske.se">iFiske</a></div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">🛶</div>
+      <div class="info-card-label">Kanu</div>
+      <div class="info-card-text">Kanuverleih & Canoe Arena bei Högbo Bruk – organisierte Routen auf sicheren Gewässern</div>
+      <div class="link-row"><a class="ext-link" href="https://www.hogbobruk.se">Högbo Bruk</a></div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">🫐</div>
+      <div class="info-card-label">Natur</div>
+      <div class="info-card-text">Blaubeeren, Pilze, Wanderwege – Naturkartan-App für lokale Trails</div>
+      <div class="link-row"><a class="ext-link" href="https://www.naturkartan.se">Naturkartan</a></div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">📱</div>
+      <div class="info-card-label">Region</div>
+      <div class="info-card-text">VisitHofors für aktuelle Ausflugstipps und lokale Angebote</div>
+      <div class="link-row"><a class="ext-link" href="https://www.visithofors.se">VisitHofors</a></div>
+    </div>
+  </div>
+
+  <div class="tips-box">
+    <div class="tips-box-label">Angeln in Hofors – Tipps</div>
+    <ul>
+      <li>Hofors FVOF-Karte deckt fast 40 Seen ab – online über <a href="https://www.ifiske.se">iFiske</a> oder lokal in Hofors kaufen</li>
+      <li>Jugendliche bis 15 Jahre angeln teils kostenlos, aber nur mit einem Handgerät</li>
+      <li>Sälgsjön: bekannt für große Barsche</li>
+      <li>Hubo-Långsjön: Put-and-Take mit 20 Tonnen Regenbogenforellen pro Jahr</li>
+    </ul>
+  </div>
+
+  <div class="excursions-title">Ausflugsziele</div>
+  <div class="excursion-list">
+
+    <div class="excursion">
+      <div class="excursion-icon green">⛏️</div>
+      <div>
+        <div class="excursion-name">Storberget / Stollgången – Historische Eisenminen</div>
+        <div class="excursion-desc">Historische Eisenerzgruben mit Stollen, Bergbaugeschichte und echtem Abenteuerflair. Geführte Touren, tiefe Tagebaue und eine Aussichtsplattform.</div>
+        <div class="link-row"><a class="ext-link" href="https://www.visithofors.se/uppleva/storberget/">Storberget Info</a></div>
+        <span class="excursion-tip">Highlight in Hofors</span>
+      </div>
+    </div>
+
+    <div class="excursion">
+      <div class="excursion-icon amber">🏭</div>
+      <div>
+        <div class="excursion-name">Högbo Bruk – Historisches Eisenwerk</div>
+        <div class="excursion-desc">Lebendiges Eisenwerk-Areal aus dem 17. Jahrhundert: Wege, Handwerk, Tiere, Aktivangebote, Kanuverleih, MTB, Klettern/High-Rope, Golf/Fußballgolf, Essen und Fika. Plan: Spaziergang durch das Bruk, dann Kanu oder MTB, danach Fika.</div>
+        <div class="link-row"><a class="ext-link" href="https://www.hogbobruk.se">Högbo Bruk</a></div>
+        <span class="excursion-tip">Bester Familientag</span>
+      </div>
+    </div>
+
+    <div class="excursion">
+      <div class="excursion-icon blue">🦅</div>
+      <div>
+        <div class="excursion-name">Färnebofjärden Nationalpark</div>
+        <div class="excursion-desc">Seen, Stromschnellen, Feuchtgebiete und Wälder – besonders für Vogelbeobachtung. Naturum Färnebofjärden bei Gysinge Bruk; im Sommer geführte Paddeltouren. Plan: Wanderung, Naturum, Picknick, Fernglas mitnehmen.</div>
+        <div class="link-row">
+          <a class="ext-link" href="https://www.naturvardsverket.se/farnebbofarden">Nationalpark</a>
+          <a class="ext-link" href="https://www.lansstyrelsen.se/gavleborg/besoksmal/naturreservat/farnebofjarden.html">Naturum</a>
+        </div>
+        <span class="excursion-tip">Fernglas nicht vergessen</span>
+      </div>
+    </div>
+
+    <div class="excursion">
+      <div class="excursion-icon purple">⛏️</div>
+      <div>
+        <div class="excursion-name">Falun Kupferbergwerk (UNESCO-Welterbe)</div>
+        <div class="excursion-desc">Führungen unter Tage, Grubenmuseum, historische Umgebung, Restaurants und Shops. Auch ideal als Schlechtwetterprogramm.</div>
+        <div class="link-row"><a class="ext-link" href="https://www.falugruva.se">Falun Gruva</a></div>
+        <span class="excursion-tip">Schlechtwetter-Ass</span>
+      </div>
+    </div>
+
+    <div class="excursion">
+      <div class="excursion-icon amber">🏙️</div>
+      <div>
+        <div class="excursion-name">Gävle – Stadtpause</div>
+        <div class="excursion-desc">Shopping, Cafés, Eisenbahnmuseum oder County Museum, Spaziergang durch ältere Viertel. Für Kinder: Furuviksparken mit Tieren, Wasserpark und Freizeitpark.</div>
+        <div class="link-row">
+          <a class="ext-link" href="https://www.visitgavle.se">VisitGävle</a>
+          <a class="ext-link" href="https://www.furuvik.se">Furuviksparken</a>
+          <a class="ext-link" href="https://www.jarnvagsmuseet.se">Eisenbahnmuseum</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="excursion">
+      <div class="excursion-icon blue">🚵</div>
+      <div>
+        <div class="excursion-name">Kungsberget – Aktiver Tag</div>
+        <div class="excursion-desc">Im Sommer: Flowtrails und Cross-Country-Biken, Padel, Beachvolleyball, Terrasse und Restaurant. Vorher Öffnungszeiten prüfen.</div>
+        <div class="link-row"><a class="ext-link" href="https://www.kungsberget.se">Kungsberget</a></div>
+        <span class="excursion-tip">Für aktive Tage</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<hr class="dest-divider">
+
+<!-- ============================
+     GÖTEBORG
+     ============================ -->
+<div id="goeteborg">
+<div class="section">
+  <div class="dest-header">
+    <div>
+      <div class="dest-eyebrow">19. – 22. Juli · Schweden · Hotel noch offen</div>
+      <h2 class="dest-h2">Göteborg</h2>
+      <p class="dest-tagline">Hafenstadt mit Schärenkulisse, Wissenschaftsmuseen, lebhaften Vierteln und einer der schönsten Meeresküsten Skandinaviens</p>
+    </div>
+    <div class="dest-badge"><div class="dest-badge-label">Aufenthalt</div><div class="dest-badge-val">3 Nächte</div></div>
+  </div>
+
+  <svg class="scene" viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg">
+    <rect width="860" height="300" fill="#c8dde8"/>
+    <rect width="860" height="140" fill="#aacade"/>
+    <rect y="215" width="860" height="85" fill="#4a7fa0" opacity="0.85"/>
+    <rect x="120" y="110" width="18" height="110" fill="#d44040"/>
+    <rect x="112" y="100" width="34" height="18" fill="#c03030"/>
+    <circle cx="129" cy="95" r="8" fill="#c03030"/>
+    <polygon points="200,220 300,220 300,155 250,140 200,155" fill="#d4c9ab"/>
+    <polygon points="200,155 250,130 300,155" fill="#c0b590"/>
+    <rect x="320" y="140" width="40" height="80" fill="#b0bac8"/>
+    <rect x="365" y="155" width="35" height="65" fill="#c0c8d4"/>
+    <rect x="405" y="130" width="45" height="90" fill="#a8b4c0"/>
+    <rect x="510" y="120" width="55" height="100" fill="#c8b48e"/>
+    <polygon points="505,123 565,123 537,92" fill="#b0a07a"/>
+    <line x1="0" y1="218" x2="860" y2="218" stroke="#8aafc8" stroke-width="3"/>
+    <line x1="630" y1="160" x2="680" y2="218" stroke="#8aafc8" stroke-width="2"/>
+    <line x1="710" y1="160" x2="680" y2="218" stroke="#8aafc8" stroke-width="2"/>
+    <line x1="630" y1="218" x2="710" y2="218" stroke="#8aafc8" stroke-width="2"/>
+    <rect x="625" y="150" width="5" height="70" fill="#7090a8"/>
+    <rect x="706" y="150" width="5" height="70" fill="#7090a8"/>
+    <ellipse cx="150" cy="232" rx="40" ry="10" fill="#8b6f47"/>
+    <rect x="135" y="218" width="30" height="15" fill="#9b7f57"/>
+    <polygon points="150,215 152,195 170,215" fill="#e8e0d0" opacity="0.9"/>
+    <ellipse cx="520" cy="238" rx="50" ry="11" fill="#4a6080"/>
+    <rect x="510" y="225" width="20" height="14" fill="#5a7090"/>
+    <path d="M 380 100 Q 387 95 394 100" stroke="#4a5c4d" stroke-width="1.5" fill="none"/>
+    <path d="M 420 85 Q 427 80 434 85" stroke="#4a5c4d" stroke-width="1.5" fill="none"/>
+    <path d="M 350 115 Q 356 111 362 115" stroke="#4a5c4d" stroke-width="1.5" fill="none"/>
+    <ellipse cx="80" cy="45" rx="55" ry="18" fill="white" opacity="0.6"/>
+    <ellipse cx="110" cy="40" rx="40" ry="14" fill="white" opacity="0.55"/>
+    <ellipse cx="700" cy="55" rx="50" ry="17" fill="white" opacity="0.5"/>
+    <circle cx="780" cy="60" r="25" fill="#f0d060" opacity="0.8"/>
+  </svg>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="info-card-icon">🏨</div>
+      <div class="info-card-label">Hotel-Tipp</div>
+      <div class="info-card-text">Haga/Linné für Stadtflair & Craftbeer · Liseberg Grand Curiosa Hotel als Alternative</div>
+      <div class="link-row">
+        <a class="ext-link" href="https://www.liseberghotel.se/grandcuriosa/">Grand Curiosa Hotel</a>
+        <a class="ext-link" href="https://www.booking.com/city/se/gothenburg.de.html">Booking.com</a>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">🔬</div>
+      <div class="info-card-label">Universeum</div>
+      <div class="info-card-text">Interaktives Wissenschaftszentrum: Aquarium, Regenwald, Technik, Weltraum – auch für 12/14 Jahre ideal</div>
+      <div class="link-row"><a class="ext-link" href="https://www.universeum.se">Universeum</a></div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">🏝️</div>
+      <div class="info-card-label">Schären</div>
+      <div class="info-card-text">Tram nach Saltholmen, Fähre nach Styrsö, Brännö oder Vrångö – Felsen, Baden, rote Häuser, Meer</div>
+      <div class="link-row"><a class="ext-link" href="https://www.goteborg.com/aktiviteter/skargard/">Schären-Guide</a></div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">🍺</div>
+      <div class="info-card-label">Craftbeer</div>
+      <div class="info-card-text">Majorna/Stigberget, Poppels, Beerbliotek – beste Szene in Haga/Linné</div>
+      <div class="link-row">
+        <a class="ext-link" href="https://www.poppels.se">Poppels</a>
+        <a class="ext-link" href="https://www.beerbliotek.com">Beerbliotek</a>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">🐧</div>
+      <div class="info-card-label">Slottsskogen</div>
+      <div class="info-card-text">Großer Stadtpark mit freilaufenden Tieren, Picknick, Spielplatz – kostenlos</div>
+      <div class="link-row"><a class="ext-link" href="https://www.goteborg.com/platser/slottsskogen/">Slottsskogen</a></div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">🦭</div>
+      <div class="info-card-label">Maritiman</div>
+      <div class="info-card-text">Schwimmendes Schiffsmuseum – gut bei schlechtem Wetter</div>
+      <div class="link-row"><a class="ext-link" href="https://www.maritiman.se">Maritiman</a></div>
+    </div>
+  </div>
+
+  <div class="excursions-title">3-Tage-Plan</div>
+  <div class="day-plan">
+    <div class="day-block">
+      <div class="day-time">19. Juli</div>
+      <div class="day-content">
+        <div class="day-content-title">Ankunft & Erster Stadtabend</div>
+        <div class="day-content-text">Einchecken, dann Spaziergang durch Haga oder entlang der Kanäle. Entspanntes Abendessen. Wer noch Energie hat: Skansen Kronan für die Aussicht über die Stadt. Abends Craftbeer bei <a href="https://www.poppels.se">Poppels</a> oder <a href="https://www.beerbliotek.com">Beerbliotek</a> in Majorna/Stigberget.</div>
+      </div>
+    </div>
+    <div class="day-block">
+      <div class="day-time">20. Juli</div>
+      <div class="day-content">
+        <div class="day-content-title">Stadt + Universeum + Park</div>
+        <div class="day-content-text">Vormittags <a href="https://www.universeum.se">Universeum</a> – Aquarium, Regenwald, Chemie-/Technik-/Weltraumthemen und Wisdome. Nachmittags <a href="https://www.goteborg.com/platser/slottsskogen/">Slottsskogen</a> mit Tieren und Picknick – oder Avenyn/Shoppingrunde. Abends Linné/Haga: <a href="https://www.feskekörka.se">Feskekörka</a> für Seafood (renovierte historische Fischhalle als Food Hall).</div>
+      </div>
+    </div>
+    <div class="day-block">
+      <div class="day-time">21. Juli</div>
+      <div class="day-content">
+        <div class="day-content-title">Schären-Tag</div>
+        <div class="day-content-text">Bei gutem Wetter: Tram/Bus nach Saltholmen, Fähre nach Styrsö, Brännö oder <a href="https://www.goteborg.com/aktiviteter/skargard/">Vrångö</a>. Von Felsen ins Meer springen, kleine Wanderwege, rote Häuser, Stille. Normales ÖPNV-Ticket gilt für die Fähre. Bei schlechtem Wetter: <a href="https://www.maritiman.se">Maritiman</a> oder Kunst-/Stadtmuseum, dazu Shopping in Nordstan.</div>
+      </div>
+    </div>
+    <div class="day-block">
+      <div class="day-time">22. Juli</div>
+      <div class="day-content">
+        <div class="day-content-title">Abreise</div>
+        <div class="day-content-text">Ggf. noch kurzer Stopp im <a href="https://www.botaniska.se">Botanischen Garten</a> oder Slottsskogen, dann rechtzeitig zum Fährterminal. Kiel–Göteborg via Stena Line: bequeme Nachtfähre, kein Umweg durch Schweden.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tips-box">
+    <div class="tips-box-label">Hotel-Lagen im Vergleich</div>
+    <ul>
+      <li>Zentrum / Brunnsparken: praktischste Lage für 3 Nächte – Tram, Hafen, Shopping, Haga alles erreichbar</li>
+      <li>Haga / Linné / Nähe Slottsskogen: charmanter, bessere Cafés und Bars, echter für abends und Craftbeer</li>
+      <li>Avenyn / Korsvägen: gut für Universeum & Liseberg, aber touristischer – nur wenn Freizeitpark-Fokus</li>
+      <li>Parkkosten in Göteborg sind erheblich – Familienzimmer oder Apartment-Hotel mit Parkmöglichkeit wählen</li>
+    </ul>
+  </div>
+
+  <div class="excursions-title">Nützliche Links – Göteborg</div>
+  <div class="excursion-list">
+    <div class="excursion">
+      <div class="excursion-icon blue">🗺️</div>
+      <div>
+        <div class="excursion-name">Planung & Tickets</div>
+        <div class="excursion-desc">Offizielle Tourismus-Seite, ÖPNV-App und Göteborg Pass für Museen und Fähren</div>
+        <div class="link-row">
+          <a class="ext-link" href="https://www.goteborg.com/de/">Göteborg Tourismus</a>
+          <a class="ext-link" href="https://www.vasttrafik.se">Västtrafik (ÖPNV)</a>
+          <a class="ext-link" href="https://www.goteborg.com/de/goteborg-pass/">Göteborg Pass</a>
+          <a class="ext-link" href="https://www.liseberg.se">Liseberg</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <strong>Skandinavien 2025</strong> · Familie aus Buchholz in der Nordheide · 04.–22. Juli<br>
+  <span style="margin-top:8px; display:inline-block; opacity:0.5; font-size:11px;">Reiseplan erstellt mit Claude · Alle Angaben vor Ort prüfen · Links ohne Gewähr</span>
+</div>
+
+</body>
+</html>
