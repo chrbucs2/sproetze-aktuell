@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+cd "$(git rev-parse --show-toplevel)"
+npm run check
+if ! git diff --quiet -- dist; then
+  echo "dist/ wurde durch den Build verändert. Bitte die erzeugten Dateien committen und dann erneut pushen."
+  exit 1
+fi

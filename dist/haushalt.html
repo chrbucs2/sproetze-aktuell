@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon-HV1kWBx1.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sprötze aktuell – Unterseite Haushalt mit konzentrierter Übersicht zum Buchholzer Nachtragshaushalt 2026."
+    />
+    <title>Haushalt | Sprötze aktuell</title>
+    <script type="module" crossorigin src="./assets/site-cj4_84ok.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/site-D5AvFZXw.css">
+  </head>
+  <body data-page="haushalt">
+    <main>
+      <header class="topbar">
+        <div class="brand">
+          <img class="brand-logo" src="./assets/wgs-logo-DReENnQK.png" alt="Logo der Wählergruppe Sprötze" />
+          <div class="brand-copy">
+            <p class="eyebrow">Sprötze aktuell</p>
+            <p>Die wichtigsten Zahlen und Vergleiche zum Buchholzer Nachtragshaushalt 2026.</p>
+          </div>
+        </div>
+        <nav class="nav" aria-label="Hauptnavigation">
+          <a href="./index.html" data-nav="startseite">Start</a>
+          <a href="./haushalt.html" data-nav="haushalt">Haushalt</a>
+          <a href="./sproetze.html" data-nav="sproetze">Sprötze</a>
+        </nav>
+      </header>
+
+      <section class="year-strip" aria-label="Haushaltsjahr auswählen">
+        <div class="year-strip-row">
+          <span class="year-tabs-label">Haushaltsjahr</span>
+          <div id="householdYearTabs" class="year-tabs" role="tablist" aria-label="Haushaltsjahr auswählen"></div>
+          <p class="year-status muted" id="yearAvailabilityNote"></p>
+        </div>
+      </section>
+
+      <section class="hero">
+        <div>
+          <span class="sponsor" id="householdSponsor">Buchholz 1. Nachtragshaushalt 2026</span>
+          <h1 id="householdTitle">Haushalt 2026: Woher das Geld kommt und wohin es fließt.</h1>
+          <p class="lead" id="householdLead">
+            Die Seite zeigt, wie sich ordentliche Einnahmen und Ausgaben auf die einzelnen Bereiche
+            verteilen und wo die größten Schwerpunkte im Haushalt liegen.
+          </p>
+          <div class="actions">
+            <a class="button primary" data-pdf-link href="#">PDF öffnen</a>
+            <a
+              class="button secondary"
+              href="https://www.buchholz.de/portal/seiten/der-haushalt-der-stadt-903000713-20101.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Offizielle Haushaltsseite
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-panel">
+          <p class="eyebrow" id="yearOverviewLabel">Schnellüberblick 2026</p>
+          <div class="hero-stats" id="householdHeroStats"></div>
+        </aside>
+      </section>
+
+      <section class="kpi-grid" id="householdKpis" aria-label="Wichtige Kennzahlen">
+      </section>
+
+
+      <section class="section" id="departmentFocusSection">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Einnahmen & Ausgaben</p>
+            <h2>Wie Geld im Jahr 2026 hinein- und wieder hinausfließt</h2>
+            <p>Die Hauptübersicht zeigt die gesamten Ein- und Auszahlungen des Jahres. Ein Klick blendet die Diagramme aus und öffnet den gewählten Bereich.</p>
+          </div>
+        </div>
+
+        <div class="pie-grid">
+          <article class="chart-card" id="revenuePieCard">
+            <div class="chart-head">
+              <div>
+                <p class="eyebrow">Einnahmenseite</p>
+                <div class="title-with-info">
+                  <h3>Einzahlungen gesamt</h3>
+                  <button
+                    type="button"
+                    class="info-button"
+                    aria-label="Info zu Einzahlungen gesamt"
+                    data-info-title="Einzahlungen gesamt"
+                    data-info-body="Hier steckt mehr drin als in den ordentlichen Erträgen: zusätzlich zählen auch Investitionseinzahlungen und Finanzierungseinzahlungen dazu, zum Beispiel Kredite."
+                  >
+                    i
+                  </button>
+                </div>
+              </div>
+              <p class="muted">Laufende Einzahlungen, Investitionen und Finanzierung zusammen.</p>
+            </div>
+            <div id="revenuePieChart" class="pie-chart" aria-live="polite"></div>
+            <div id="revenuePieLegend" class="pie-legend" aria-label="Legende Einnahmen"></div>
+          </article>
+
+          <article class="chart-card" id="expensePieCard">
+            <div class="chart-head">
+              <div>
+                <p class="eyebrow">Ausgabenseite</p>
+                <div class="title-with-info">
+                  <h3>Auszahlungen gesamt</h3>
+                  <button
+                    type="button"
+                    class="info-button"
+                    aria-label="Info zu Auszahlungen gesamt"
+                    data-info-title="Auszahlungen gesamt"
+                    data-info-body="Hier geht es um alle tatsächlichen Geldabflüsse des Jahres: laufende Auszahlungen, Investitionen und Finanzierungsauszahlungen zusammen."
+                  >
+                    i
+                  </button>
+                </div>
+              </div>
+              <p class="muted">Laufende Auszahlungen, Investitionen und Finanzierung zusammen.</p>
+            </div>
+            <div id="expensePieChart" class="pie-chart" aria-live="polite"></div>
+            <div id="expensePieLegend" class="pie-legend" aria-label="Legende Ausgaben"></div>
+          </article>
+
+          <aside class="links" id="departmentSummary" aria-live="polite"></aside>
+          <article class="chart-card pie-detail-card" id="pieDrilldownCard" aria-live="polite" hidden></article>
+        </div>
+      </section>
+
+      <section class="section" id="departmentOverviewSection">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Haushaltsbereiche</p>
+            <h2>Welche Bereiche den Haushalt prägen</h2>
+          </div>
+        </div>
+        <div class="toolbar">
+          <div class="segmented" role="tablist" aria-label="Kennzahl wählen">
+            <button
+              type="button"
+              class="is-active"
+              data-metric-button="result"
+              data-hover-info-title="Ordentliches Ergebnis"
+              data-hover-info-body="Hier werden die ordentlichen Einnahmen und Ausgaben eines Bereichs verrechnet. Ein negativer Wert heißt: Der Bereich braucht mehr Zuschuss, als er selbst an ordentlichen Erträgen einbringt."
+            >
+              Ordentliches Ergebnis
+            </button>
+            <button
+              type="button"
+              data-metric-button="admin"
+              data-hover-info-title="Verwaltungssaldo"
+              data-hover-info-body="Das ist der Saldo aus dem laufenden Verwaltungsgeschäft als Zahlungsblick. Hier geht es also stärker darum, was im Alltag tatsächlich herein- und hinausfließt."
+            >
+              Verwaltungssaldo
+            </button>
+            <button
+              type="button"
+              data-metric-button="investment"
+              data-hover-info-title="Investive Auszahlungen"
+              data-hover-info-body="Das ist Geld für Bauprojekte, größere Sanierungen, Fahrzeuge oder Technik. Also nicht der normale Alltag der Verwaltung, sondern Dinge, die länger bleiben."
+            >
+              Investive Auszahlungen
+            </button>
+            <button
+              type="button"
+              data-metric-button="commitments"
+              data-hover-info-title="Verpflichtungsermächtigung"
+              data-hover-info-body="Das ist noch kein sofort ausgezahltes Geld. Die Stadt darf damit aber schon Verträge für größere Vorhaben schließen, deren Rechnungen erst in späteren Jahren fällig werden."
+            >
+              Verpflichtungsermächtigung
+            </button>
+          </div>
+        </div>
+
+        <div class="chart-layout single-chart-layout">
+          <div class="chart-card">
+            <div class="chart-head">
+              <div>
+                <p class="eyebrow">Größte Beiträge</p>
+                <h3 id="departmentChartTitle">Ordentliches Ergebnis</h3>
+              </div>
+              <p class="muted" id="departmentChartHint">Sortiert nach absolutem Wert.</p>
+            </div>
+            <div id="departmentChart" class="chart-list" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="departmentTableSection">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Gesamtüberblick</p>
+            <h2>Alle Bereiche im Überblick</h2>
+          </div>
+        </div>
+        <div class="toolbar toolbar-wide">
+          <label class="field search-field">
+            <span>Suche</span>
+            <input
+              id="departmentSearch"
+              type="search"
+              placeholder="Bereich oder Stichwort eingeben"
+              autocomplete="off"
+            />
+          </label>
+
+          <label class="field select-field">
+            <span>Sortierung</span>
+            <select id="departmentSort">
+              <option value="metric-desc">Aktive Kennzahl absteigend</option>
+              <option value="metric-asc">Aktive Kennzahl aufsteigend</option>
+              <option value="label-asc">Name A–Z</option>
+              <option value="commitments-desc">VE absteigend</option>
+              <option value="investment-desc">Investitionen absteigend</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="filter-chips" role="toolbar" aria-label="Bereichsfilter">
+          <button type="button" class="is-active" data-filter-button="all">Alle</button>
+          <button type="button" data-filter-button="positive">Positives Ergebnis</button>
+          <button type="button" data-filter-button="negative">Negatives Ergebnis</button>
+          <button type="button" data-filter-button="investment">Mit Investitionen</button>
+          <button type="button" data-filter-button="sproetze">Sprötze-Bezug</button>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Bereich</th>
+                <th>Ordentliche Einnahmen</th>
+                <th>Ordentliche Ausgaben</th>
+                <th>Ordentliches Ergebnis</th>
+                <th>Verwaltungssaldo</th>
+                <th>Investive Auszahlungen</th>
+                <th>VE</th>
+              </tr>
+            </thead>
+            <tbody id="departmentTableBody"></tbody>
+          </table>
+        </div>
+
+        <p class="table-note muted" id="departmentTableCount"></p>
+      </section>
+
+      <section class="section" id="haushalt-sources">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Grundlage</p>
+            <h2>Woher die Zahlen kommen</h2>
+            <p>Die Zahlen auf dieser Seite stammen aus dem beschlossenen Nachtragshaushalt und der offiziellen Buchholzer Haushaltsseite.</p>
+          </div>
+        </div>
+
+        <div class="page-grid two">
+          <article class="link-card source-card-inline">
+            <p class="eyebrow">Beschlusslage</p>
+            <h3>1. Nachtragshaushaltsplan 2026</h3>
+            <ul class="list">
+              <li>Beschlussdatum: <strong>09.02.2026</strong></li>
+              <li>Verwendete Seiten: <strong>3, 4, 8, 10–13, 15, 16</strong></li>
+              <li>PDF direkt von der offiziellen Buchholz-Seite verlinkt</li>
+            </ul>
+            <div class="actions">
+              <a class="button primary" data-pdf-link href="#">PDF öffnen</a>
+              <a
+                class="button secondary"
+                href="https://www.buchholz.de/portal/seiten/der-haushalt-der-stadt-903000713-20101.html"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Buchholz.de öffnen
+              </a>
+            </div>
+          </article>
+
+          <article class="link-card source-card-inline">
+            <p class="eyebrow">Einordnung</p>
+            <h3>So liest sich die Seite</h3>
+            <ul class="list">
+              <li>Die Hauptübersicht zeigt <strong>Einzahlungen und Auszahlungen gesamt</strong> nach Bereichen.</li>
+              <li>Die Detailansicht verbindet dieselbe Auswahl mit Ergebnis, Verwaltungssaldo, Investitionen, VE und Liquidität.</li>
+              <li>Die Vergleichstabelle bleibt frei filterbar, damit auch kleinere Bereiche auffindbar sind.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div class="info-popover" id="infoPopover" hidden>
+      <div class="info-popover-card" role="dialog" aria-modal="false" aria-labelledby="infoPopoverTitle">
+        <div class="info-popover-head">
+          <strong id="infoPopoverTitle"></strong>
+          <button type="button" class="info-popover-close" aria-label="Hinweis schließen">×</button>
+        </div>
+        <p id="infoPopoverBody"></p>
+      </div>
+    </div>
+
+  </body>
+</html>
+
